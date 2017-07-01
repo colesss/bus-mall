@@ -59,9 +59,9 @@ console.log(allProducts);
 console.log(threeProducts);
 
 //variables being assigned IDs per html
-var first = document.getElementById("first")
-var second = document.getElementById("second")
-var third = document.getElementById("third")
+var first = document.getElementById('first')
+var second = document.getElementById('second')
+var third = document.getElementById('third')
 
 //function that is supposed to set the random product to each var iamge
 function setRandom() {
@@ -109,3 +109,21 @@ setRandom();
 first.addEventListener('click', setRandom);
 second.addEventListener('click', setRandom);
 third.addEventListener('click', setRandom);
+
+//figure out how to calculate clicks when clicks aren't working
+
+//variables that are suppposed to get the bar chart up and running...
+var ctx = document.getElementById('results-chart');
+var dataSet = [20, 30, 40, 50, 60];
+
+//broken bar chart, yay!!!
+var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: allProducts.productName, //using allProducts for now until I can get a functioning calculating system
+      datasets: [{
+        label: 'Most popular products'
+        data: dataSet;
+      }]
+    }
+});
