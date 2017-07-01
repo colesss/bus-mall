@@ -1,0 +1,13 @@
+body {
+  background-color: black;
+}
+
+div{
+  display: block;
+  height: 400px;
+}
+
+#first, #second, #third{
+  height: 200px;
+  width: 200px;
+}
