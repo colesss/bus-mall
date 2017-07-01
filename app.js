@@ -45,10 +45,11 @@ function random() {
     if (threeProducts.indexOf(index) > 0) {
       // index = Math.floor(Math.random(allProducts.length));
       index = allProducts[Math.floor(Math.random() * (allProducts.length))];
+        return index;
     } else {
-      //this shit is broken for now, come back to it later...
-      //threeProducts.push(index);
-      return index;
+    //   //this shit is broken for now, come back to it later...
+    //   //threeProducts.push(index);
+    return index;
     }
   //return index;
 }
@@ -71,26 +72,29 @@ function setRandom() {
       firstImage == threeProducts[2]) {
         firstImage = random();
       }
+    threeProducts.push(firstImage);
 
 
   var secondImage = random();
   console.log(secondImage);
-  while (secondImage == threeProducts[0]||
-    secondImage == threeProducts[1]||
-    secondImage == threeProducts[2]||
-    secondImage == firstImage) {
-      secondImage = random();
-    }
+    while (secondImage == threeProducts[0]||
+      secondImage == threeProducts[1]||
+      secondImage == threeProducts[2]||
+      secondImage == firstImage) {
+        secondImage = random();
+      }
+    threeProducts.push(secondImage);
 
   var thirdImage = random();
   console.log(thirdImage);
-  while (thirdImage == threeProducts[0]||
-    thirdImage == threeProducts[1]||
-    thirdImage == threeProducts[2]||
-    thirdImage == firstImage||
-    thirdImage == secondImage) {
-      thirdImage = random();
-    }
+    while (thirdImage == threeProducts[0]||
+      thirdImage == threeProducts[1]||
+      thirdImage == threeProducts[2]||
+      thirdImage == firstImage||
+      thirdImage == secondImage) {
+        thirdImage = random();
+      }
+    threeProducts.push(thirdImage);
 
   //sets attributes with specified file location to variables where we have previously set the IDs per html
   first.setAttribute('src', threeProducts[0].fileLocation);
