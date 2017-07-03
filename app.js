@@ -89,7 +89,6 @@ function displayImage() {
   second.setAttribute('src', threeProducts[1].fileLocation);
   third.setAttribute('src', threeProducts[2].fileLocation);
   threeProducts = [];
-
 }
 
 var firstEvent = document.getElementById('first');
@@ -102,25 +101,40 @@ thirdEvent.addEventListener('click', handleClick)
 
 //supposed to add event listener, click, to each variable being set with the setRandom function but doesn't appear to do anything but console.log...
 function handleClick(event) {
-  // //this is only needed for submit buttons because they refresh the page
-  // //event.preventDefault();
-  
+  //this is only needed for submit buttons because they refresh the page
+  //event.preventDefault();
+
+  //some calculation to count clicked
+
   displayImage();
 }
 
 
-// //variables that are suppposed to get the bar chart up and running...
-// var ctx = document.getElementById('results-chart');
-// var dataSet = [20, 30, 40, 50, 60];
-//
-// //broken bar chart, yay!!!
-// var myBarChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//       labels: allProducts.productName, //using allProducts for now until I can get a functioning calculating system
-//       datasets: [{
-//         label: 'Most popular products'
-//         data: dataSet;
-//       }]
-//     }
-// });
+//variables that are suppposed to get the bar chart up and running...
+var ctx = document.getElementById('results-chart');
+var dataSet = [20, 30, 40, 50, 60];
+
+//broken bar chart, yay!!!
+var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: allProducts.productName, //using allProducts for now until I can get a functioning calculating system
+      datasets: [{
+        label: 'Most popular products'
+        data: dataSet;
+      }]
+    }
+});
+
+//local storage stuff that doesn't make sense
+function clickCounter() {
+  if (localStorage.clicked) {
+      localStorage.clicked = Number(localStorage.clicked) + 1;
+  } else {
+      localStorage.clicked = 1;
+
+    var stringifiedData = localStorage.clicked;
+    console.log(stringifiedData);
+  }
+
+}
