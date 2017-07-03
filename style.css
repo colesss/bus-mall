@@ -2,12 +2,8 @@ body {
   background-color: black;
 }
 
-div{
-  display: block;
-  height: 400px;
-}
-
-#first, #second, #third{
+img {
+  float: left;
   height: 200px;
   width: 200px;
 }
